@@ -1,2 +1,29 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="quiz-container">
+        <div id="quiz"></div>
+        <button id="start-button">Start Quiz</button>
+        <div id="timer"></div>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Quiz Results</h1>
+        <p id="final-score"></p>
+        <form>
+            <label for="initials">Enter your initials:</label>
+            <input type="text" id="initials" required>
+            <button type="submit">Save Score</button>
+        </form>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+
+</html>
