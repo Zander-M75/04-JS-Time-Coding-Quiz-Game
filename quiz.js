@@ -97,16 +97,16 @@ function renderQuestion() {
     questionText.textContent = currentQuestion.question;
     quiz.appendChild(questionText);
 
-    // loop through the options array and create a button for each option
-    currentQuestion.options.forEach((option) => {
-        const optionButton = document.createElement("button");
-        optionButton.textContent = option;
+    // loop through the answers array and create a button for each answer
+    currentQuestion.answers.forEach((answer, i) => {
+        const answerButton = document.createElement("button");
+        answerButton.textContent = answer.text;
 
-        // add an event listener to the option button to handle the user's answer
-        optionButton.addEventListener("click", (event) => {
-            const selectedOption = event.target.textContent;
-            // if the selected option is the correct answer
-            if (selectedOption === currentQuestion.answer) {
+        // add an event listener to the answer button to handle the user's answer
+        answerButton.addEventListener("click", (event) => {
+            const selectedAnswer = event.target.textContent;
+            // if the selected answer is correct
+            if (selectedAnswer === currentQuestion.answers[i].text && answer.correct) {
                 // increment the currentQuestionIndex and either render the next question or end the quiz
                 currentQuestionIndex++;
                 if (currentQuestionIndex === questions.length) {
@@ -119,9 +119,10 @@ function renderQuestion() {
                 timeLeft -= 5;
             }
         });
-        quiz.appendChild(optionButton);
+        quiz.appendChild(answerButton);
     });
 }
+
 
 function endQuiz() {
     // Stop the timer interval
