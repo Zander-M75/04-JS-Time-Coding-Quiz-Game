@@ -137,6 +137,54 @@ function endQuiz() {
     finalScore.textContent = `Your final score is: ${timeLeft}`;
 }
 
+// Save the user's initials and score to local storage
+saveScoreForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    // Get the value of the initials input and store it in the "initials" variable
+    const initials = initialsInput.value;
+
+    // Retrieve the "highScores" from local storage or set it to an empty array if it doesn't exist
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+    // Push the current score and initials to the "highScores" array
+    highScores.push({ initials, score: timeLeft });
+
+    // Store the updated "highScores" array back in local storage
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+
+    // Reset the form after the score has been saved
+    saveScoreForm.reset();
+
+    // Call the function to display the high scores
+    displayHighScores();
+});
+
+function displayHighScores() {
+    // Hide the results container and show the high scores container
+    resultsContainer.style.display = "none";
+    highScoresContainer.style.display = "block";
+
+    // Retrieve the "highScores" array from local storage or set it to an empty array if it doesn't exist
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+    // Sort the "highScores" array by score in descending order
+    highScores.sort((a, b) => b.score - a.score);
+
+    // Clear the high scores list
+    highScoresList.innerHTML = "";
+
+    // Loop through the "highScores" array and create a list item for each score
+    highScores.forEach((score, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${score.initials} - ${score.score}`;
+        highScoresList.appendChild(li);
+    });
+}
+
+
+// Add an event listener to the start button to call the startQuiz function
+startButton.addEventListener("click", startQuiz);
+
 
 
 
