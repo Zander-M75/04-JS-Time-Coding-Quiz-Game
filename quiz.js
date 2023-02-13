@@ -48,3 +48,11 @@ const questions = [
 
 ];
 
+const startButton = document.getElementById("start-button");
+const quizContainer = document.getElementById("quiz-container");
+const quiz = document.getElementById("quiz");
+const timer = document.getElementById("timer");
+const resultsContainer = document.getElementById("results-container");
+const finalScore = document.getElementById("final-score");
+const initialsInput = document.getElementById("initials");
+const saveScoreForm = document.querySelector("form");
