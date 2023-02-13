@@ -123,6 +123,20 @@ function renderQuestion() {
     });
 }
 
+function endQuiz() {
+    // Stop the timer interval
+    clearInterval(timerInterval);
+
+    // Hide the quiz container
+    quizContainer.style.display = "none";
+
+    // Show the results container
+    resultsContainer.style.display = "block";
+
+    // Update the text content of the final score element to show the user's final score
+    finalScore.textContent = `Your final score is: ${timeLeft}`;
+}
+
 
 
 
