@@ -103,24 +103,34 @@ function renderQuestion() {
         answerButton.textContent = answer.text;
 
         // add an event listener to the answer button to handle the user's answer
+        // add an event listener to the answer button to handle the user's answer
         answerButton.addEventListener("click", (event) => {
             const selectedAnswer = event.target.textContent;
             // if the selected answer is correct
-            if (selectedAnswer === currentQuestion.answers[i].text && answer.correct) {
-                // increment the currentQuestionIndex and either render the next question or end the quiz
+            if (selectedAnswer === currentQuestion.answers[i].text && currentQuestion.answers[i].correct) {
                 currentQuestionIndex++;
                 if (currentQuestionIndex === questions.length) {
                     endQuiz();
                 } else {
                     renderQuestion();
                 }
-            } else {
+            } else if (selectedAnswer !== currentQuestion.answers[i].text || !currentQuestion.answers[i].correct) {
                 // subtract 5 seconds from the timeLeft if the answer is incorrect
                 timeLeft -= 5;
+                currentQuestionIndex++;
+                if (currentQuestionIndex === questions.length) {
+                    endQuiz();
+                } else {
+                    renderQuestion();
+                }
             }
         });
         quiz.appendChild(answerButton);
+
+
     });
+
+
 }
 
 
@@ -174,12 +184,16 @@ function displayHighScores() {
     // Clear the high scores list
     highScoresList.innerHTML = "";
 
-    // Loop through the "highScores" array and create a list item for each score
-    highScores.forEach((score, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${index + 1}. ${score.initials} - ${score.score}`;
-        highScoresList.appendChild(li);
-    });
+    // Loop through the high scores
+    for (let i = 0; i < highScores.length; i++) {
+        // Create a list item for each high score
+        let item = document.createElement("li");
+        item.textContent = `${highScores[i].initials} - ${highScores[i].score}`;
+
+        // Append the list item to the high scores list
+        highScoresList.appendChild(item);
+    }
+
 }
 
 

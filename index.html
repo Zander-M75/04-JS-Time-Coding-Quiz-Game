@@ -9,12 +9,11 @@
 
 <body>
     <div id="quiz-container">
+        <h1 id="title" style="display: block;">Timed Quiz Game</h1>
+        <p id="intro" style="display: block;">Once you click start, you will have 75 seconds to answer the sports trivia
+            questions as quickly as possible. Each wrong answer will deduct 5 seconds off the timer. Race against your
+            peers to claim the top of the leaderboard!</p>
         <div id="quiz"></div>
-        <h1>Timed Quiz Game</h1>
-        <p>Once you click start, you will have 75 seconds to answer the sports trivia questions as quickly as possible.
-            Each wrong
-            answer will deduct 5 seconds off the timer. Race against your peers to claim the top of the leaderboard!
-        </p>
         <button id="start-button">Start Quiz</button>
         <div id="timer"></div>
     </div>
@@ -30,10 +29,53 @@
     <div id="high-scores-container" style="display: block;">
         <h1>High Scores</h1>
         <ol id="high-scores-list"></ol>
-        <button id="back-button">Go Back</button>
+        <button id="back-button">Reset Scoreboard</button>
     </div>
     <script src="quiz.js"></script>
 </body>
 
 
 </html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="quiz-container">
+        <h1>Timed Quiz Game</h1>
+        <p>Once you click start, you will have 75 seconds to answer the sports trivia questions as quickly as possible.
+            Each wrong
+            answer will deduct 5 seconds off the timer. Race against your peers to claim the top of the leaderboard!
+        </p>
+        <div id="quiz"></div>
+        <button id="start-button">Start Quiz</button>
+        <div id="timer"></div>
+    </div>
+    <div id="results-container" style="display: none;">
+        <h1>Quiz Results</h1>
+        <p id="final-score"></p>
+        <form>
+            <label for="initials">Enter your initials:</label>
+            <input type="text" id="initials" required>
+            <button type="submit">Save Score</button>
+        </form>
+    </div>
+    <div id="high-scores-container" style="display: block;">
+        <h1>High Scores</h1>
+        <ol id="high-scores-list"></ol>
+        <button id="back-button">Reset Scoreboard</button>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+
+
+</html> -->
