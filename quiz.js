@@ -198,6 +198,7 @@ function displayHighScores() {
 
 }
 
+// hides everything on the page besides the scoreboard to be used with "see scores" button
 function showScores() {
     displayHighScores();
     startButton.style.display = "none";
@@ -206,7 +207,7 @@ function showScores() {
     highScoresContainer.style.display = "block";
 }
 
-// Add an event listener to the back button to reload the page
+// Add an event listener to the back button to reload the page to start the quiz over
 backButton.addEventListener("click", () => {
     window.location.reload();
 });
@@ -217,6 +218,7 @@ clearButton.addEventListener("click", () => {
     highScoresList.innerHTML = "";
 });
 
+// Add an event listener to the see scores button to call the showScores function
 seeScores.addEventListener("click", () => {
     startButton.style.display = "none";
     quizContainer.style.display = "none";
