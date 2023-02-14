@@ -1,0 +1,29 @@
+#quiz {
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+
+#quiz-container {
+    text-align: center;
+}
+
+#high-scores-container {
+    width: 50%;
+    margin: 2em auto;
+    text-align: center;
+    padding: 1em 2em;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    background-color: white;
+    border-radius: 10px;
+}
