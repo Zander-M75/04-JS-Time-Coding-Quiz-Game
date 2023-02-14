@@ -38,7 +38,7 @@ const questions = [
         ]
     },
     {
-        question: "if you bet $100 on a +100 underdog moneyline, how much money would you net (assuming your team wins)?",
+        question: "if you bet $100 on a +100 underdog moneyline, how much money would you net profit on the wager (assuming your team wins)?",
         answers: [
             { text: "$100", correct: true },
             { text: "$200", correct: false },
