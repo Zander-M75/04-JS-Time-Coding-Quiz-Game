@@ -62,6 +62,7 @@ const highScoresContainer = document.getElementById("high-scores-container");
 const highScoresList = document.getElementById("high-scores-list");
 const backButton = document.getElementById("back-button");
 const clearButton = document.getElementById("clear-button");
+const seeScores = document.getElementById("see-scores");
 
 // initlaize variables for timer and quiz questions
 let currentQuestionIndex = 0;
@@ -88,7 +89,6 @@ function startQuiz() {
     }, 1000);
 }
 
-// renderQuestion function displays the current question and its options
 function renderQuestion() {
     // clear the quiz container
     quiz.innerHTML = "";
@@ -99,13 +99,14 @@ function renderQuestion() {
     // create a paragraph element to display the question text
     const questionText = document.createElement("p");
     questionText.textContent = currentQuestion.question;
+    questionText.classList.add("question-text");
     quiz.appendChild(questionText);
 
     // loop through the answers array and create a button for each answer
     currentQuestion.answers.forEach((answer, i) => {
         const answerButton = document.createElement("button");
         answerButton.textContent = answer.text;
-
+        answerButton.classList.add("answer-button");
 
         // add an event listener to the answer button to handle the user's answer
         answerButton.addEventListener("click", (event) => {
@@ -132,6 +133,7 @@ function renderQuestion() {
         quiz.appendChild(answerButton);
     });
 }
+
 
 
 function endQuiz() {
@@ -196,6 +198,14 @@ function displayHighScores() {
 
 }
 
+function showScores() {
+    displayHighScores();
+    startButton.style.display = "none";
+    quizContainer.style.display = "none";
+    resultsContainer.style.display = "none";
+    highScoresContainer.style.display = "block";
+}
+
 // Add an event listener to the back button to reload the page
 backButton.addEventListener("click", () => {
     window.location.reload();
@@ -205,6 +215,16 @@ backButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
     localStorage.clear();
     highScoresList.innerHTML = "";
+});
+
+seeScores.addEventListener("click", () => {
+    startButton.style.display = "none";
+    quizContainer.style.display = "none";
+    resultsContainer.style.display = "none";
+    highScoresContainer.style.display = "block";
+    showScores();
+
+
 });
 
 
