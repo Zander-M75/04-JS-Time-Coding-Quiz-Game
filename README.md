@@ -11,7 +11,7 @@ This is a timed coding quiz with multiple-choice questions. This app runs in the
 
 ## Screenshots
 
-![Screenshot of the application](./Assets/JavasciptQuizNew.gif)
+![Screenshot of the application](./Assets/JSCodeQuizX.gif)
 
 ## Usage
 
