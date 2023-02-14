@@ -58,6 +58,10 @@ const resultsContainer = document.getElementById("results-container");
 const finalScore = document.getElementById("final-score");
 const initialsInput = document.getElementById("initials");
 const saveScoreForm = document.querySelector("form");
+const highScoresContainer = document.getElementById("high-scores-container");
+const highScoresList = document.getElementById("high-scores-list");
+const backButton = document.getElementById("back-button");
+const clearButton = document.getElementById("clear-button");
 
 // initlaize variables for timer and quiz questions
 let currentQuestionIndex = 0;
@@ -102,7 +106,7 @@ function renderQuestion() {
         const answerButton = document.createElement("button");
         answerButton.textContent = answer.text;
 
-        // add an event listener to the answer button to handle the user's answer
+
         // add an event listener to the answer button to handle the user's answer
         answerButton.addEventListener("click", (event) => {
             const selectedAnswer = event.target.textContent;
@@ -126,11 +130,7 @@ function renderQuestion() {
             }
         });
         quiz.appendChild(answerButton);
-
-
     });
-
-
 }
 
 
@@ -195,6 +195,16 @@ function displayHighScores() {
     }
 
 }
+
+backButton.addEventListener("click", () => {
+    window.location.reload();
+});
+
+clearButton.addEventListener("click", () => {
+    localStorage.clear();
+    highScoresList.innerHTML = "";
+});
+
 
 
 // Add an event listener to the start button to call the startQuiz function
