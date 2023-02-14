@@ -62,7 +62,7 @@ const highScoresContainer = document.getElementById("high-scores-container");
 const highScoresList = document.getElementById("high-scores-list");
 const backButton = document.getElementById("back-button");
 const clearButton = document.getElementById("clear-button");
-// const seeScores = document.getElementById("see-scores");
+
 
 // initlaize variables for timer and quiz questions
 let currentQuestionIndex = 0;
@@ -198,15 +198,6 @@ function displayHighScores() {
 
 }
 
-// hides everything on the page besides the scoreboard to be used with "see scores" button
-// function showScores() {
-//     displayHighScores();
-//     startButton.style.display = "none";
-//     quizContainer.style.display = "none";
-//     resultsContainer.style.display = "none";
-//     highScoresContainer.style.display = "block";
-// }
-
 // Add an event listener to the back button to reload the page to start the quiz over
 backButton.addEventListener("click", () => {
     window.location.reload();
@@ -217,18 +208,6 @@ clearButton.addEventListener("click", () => {
     localStorage.clear();
     highScoresList.innerHTML = "";
 });
-
-// Add an event listener to the see scores button to call the showScores function
-// seeScores.addEventListener("click", () => {
-//     startButton.style.display = "none";
-//     quizContainer.style.display = "none";
-//     resultsContainer.style.display = "none";
-//     highScoresContainer.style.display = "block";
-//     showScores();
-
-
-// });
-
 
 
 // Add an event listener to the start button to call the startQuiz function
