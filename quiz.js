@@ -196,10 +196,12 @@ function displayHighScores() {
 
 }
 
+// Add an event listener to the back button to reload the page
 backButton.addEventListener("click", () => {
     window.location.reload();
 });
 
+// Add an event listener to the clear button to clear the high scores from local storage
 clearButton.addEventListener("click", () => {
     localStorage.clear();
     highScoresList.innerHTML = "";
